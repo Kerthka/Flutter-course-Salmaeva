@@ -82,34 +82,59 @@ class Lab1App extends StatelessWidget {
 // 1. Заголовок — Text, крупный жирный текст чёрного цвета, обрезается в одну строку, если не помещается.
 Widget task1() {
   // TODO: замените Placeholder на Text()
-  return Placeholder(fallbackHeight: 24);
+  return Text('Приветикииииииииииииииииииииииииииииииииииииии', maxLines: 1,
+    style: TextStyle(
+    color: const Color.fromARGB(255, 0, 0, 0), 
+    fontSize: 52,
+    fontWeight: FontWeight.bold,
+    ),
+  );
 }
 
 // 2. Подпись — небольшой, нежирный курсивный текст белого цвета, обрезается в две строки.
 // Также реализуйте подложку из тёмно-серого контейнера с закруглениями, чтобы текст было видно
 Widget task2() {
   // TODO: замените Placeholder на ...
-  return Placeholder(fallbackHeight: 24);
+  return Container ( 
+    decoration: BoxDecoration(
+      color: const Color.fromARGB(255, 65, 65, 65), 
+      borderRadius: BorderRadius.circular(10)
+    ),
+    child: Text('лалалалалалалалалаллалалалалалаллалалаллалалалаллалаллалалалалалалалаллалалалалалалалалаллалалалалаллалалалааллалалалалаллала', maxLines: 2,
+    style: TextStyle(
+    color: Colors.white,
+    fontSize: 15,
+    fontStyle: FontStyle.italic
+      )
+  )
+);
 }
 
 // 3. Иконка — любая Icon на ваш вкус,
 // с применением цвета и размером.
 Widget task3() {
   // TODO: замените Placeholder на...
-  return Placeholder(fallbackHeight: 32, fallbackWidth: 32);
+  return Icon(Icons.follow_the_signs_rounded,
+  color: const Color.fromARGB(255, 255, 147, 214),
+  size: 50,
+  );
 }
 
 // 4. Кнопка с иконкой избранного — большая иконка сердца красного цвета без фона.
 // При нажатии пишет в консоль "Вы добавили в избранное"
 Widget task4() {
   // TODO: замените Placeholder на ...
-  return Placeholder(fallbackHeight: 32, fallbackWidth: 32);
+  return ElevatedButton.icon(onPressed: () {print('Вы добавили в избранное');}, 
+  label: Icon(Icons.favorite, color: Colors.red, size: 50), style: ElevatedButton.styleFrom(elevation: 0), );
 }
 
 // 5. Кнопка «Подробнее» — кнопка с текстом и обводкой, при нажатии пишет в консоль "Узнать детали"
 Widget task5() {
   // TODO: замените Placeholder на ...
-  return Placeholder(fallbackHeight: 32, fallbackWidth: 32);
+  return ElevatedButton(onPressed: () {print('Узнать детали');}, 
+    child: Text('Подробнее'),
+    style: ElevatedButton.styleFrom (side: BorderSide(width: 7.0, color: Colors.red)),
+    );
 }
 
 // 6. Изображение в стиле Polaroid—  выберите любое из каталога по ссылке
@@ -118,5 +143,20 @@ Widget task5() {
 // Для реализации используйте Container
 Widget task6() {
   // TODO: замените Placeholder на Container()
-  return Placeholder(fallbackHeight: 32, fallbackWidth: 32);
+  return Container(
+    width: 210,
+    height: 250,
+    padding: EdgeInsets.fromLTRB(15, 15, 15, 55),
+    decoration: BoxDecoration(
+      color: const Color.fromARGB(255, 255, 255, 255), 
+      border: Border.all(width: 1, color: const Color.fromARGB(255, 0, 0, 0)
+      ),
+    ),
+    child: Container(
+      decoration: BoxDecoration(
+      border: Border.all(width: 1, color: const Color.fromARGB(255, 0, 0, 0))
+    ),
+    child: Image.network('https://sun9-25.userapi.com/impg/_TTXelnOxD_AtI5O7H1HXRH_MBFQ0o7kMBfhDA/9KUwwL5fJEY.jpg?size=603x452&quality=95&sign=dd3ed55c10cac25810185a7114717c67&type=album',fit: BoxFit.cover),
+    )
+  );
 }
